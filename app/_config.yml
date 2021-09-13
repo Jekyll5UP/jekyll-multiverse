@@ -74,3 +74,6 @@ plugins:
   - jekyll-paspagon
   - jekyll-admin
   - jekyll_version_plugin
+
+
+exclude: [styles, pages, controllers, package.json]

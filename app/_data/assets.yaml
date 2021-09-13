@@ -1,9 +1,16 @@
-stylesheets: 
- - ns: main
-   basePath: /assets/styles/
-   resources: 
-    - main.css
+stylesheets:
+  - ns: main
+    basePath: /assets/styles/
+    resources:
+      - main.css
 
-postscripts: 
- - ns: multiverse
-   basePath: /assets/scripts/modules/multiverse/
+postscripts:
+  - ns: multiverse
+    basePath: /assets/scripts/modules/multiverse/
+    resources:
+      - jquery.min.js
+      - jquery.poptrox.min.js
+      - browser.min.js
+      - breakpoints.min.js
+      - util.js
+      - main.js
