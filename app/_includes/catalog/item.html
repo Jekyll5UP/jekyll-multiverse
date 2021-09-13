@@ -1,0 +1,13 @@
+{% capture imageThumb %}{{ include.imageThumb }}{% endcapture %}
+{% capture imageFull %}{{ include.imageFull }}{% endcapture %}
+{% capture title %}{{ include.title }}{% endcapture %}
+{% capture description %}{{ include.description }}{% endcapture %}
+
+<article class="thumb">
+  <a href="{{ imageFull }}" class="image"
+    ><img src="{{ imageThumb }}" alt="{{ title }}"
+  /></a>
+
+  <h2>{{ title }}</h2>
+  <p>{{ description }}</p>
+</article>
