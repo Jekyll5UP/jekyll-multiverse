@@ -1,10 +1,76 @@
-
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
-
 sass:
- sass_dir: styles
+  sass_dir: styles
+  style: compressed
+
+# [Plugins::Namespace]
+
+# [Alogila::Config]
+algolia:
+  application_id: "your_application_id"
+
+
+# [Paspagon::Config]
+paspagon:
+  # By making this entry, you indicate that you accept Paspagon’s terms of
+  # service. Be sure that you’ve actually read these terms!
+  accept-terms: https://github.com/Paspagon/paspagon.github.io/blob/master/terms-seller.md
+  buckets:
+    your-bucket-name:
+      seller:
+        country-code: PL
+        email: john.doe@example.com # Email is optional
+      payment:
+        # This section provides default values that you can override for each post.
+        #
+        # You can specify prices in BLK, BTC, XAU (troy ounce of gold) and some
+        # other currencies (see Paspagon’s terms of service for a complete list).
+        # (Paspagon takes only one price into account).
+        price:
+          USD: 3
+        address:
+          BLK: Byour-address
+        # Time (in seconds) after which download link will expire.
+        link-expiration-time: 600
+  # A name of a bucket which will be used to store S3 request logs.
+  logging_bucket: paspagon-logs-foo
+
+# [DataPageGen::Config]
+page_gen-dirs: [true|false]
+
+page_gen:
+  - data: [name of a data set in _data]
+    template: [name of template in _layouts: will be used to render pages]
+    dir: [directory where filenames will be generated]
+    index_files: [true|false]
+    name: [field used to generate the filename]
+    name_expr:
+      [a Ruby expression to generate the filename (alternative to name)]
+    title: [field used to generate the page title]
+    title_expr:
+      [a Ruby expression to generate the filename (alternative to title)]
+    extension: [extension used to generate the filename]
+    filter: [property to filter data records by]
+    filter_condition: [a Ruby expression to filter data]
 
 plugins:
   - jekyll-feed
+  - jekyll-default-layout
+  - jekyll-optional-front-matter
+  - jekyll-algolia
+  - liquid-md5
+  - jekyll-datapage-generator
+  - jekyll-tagging-related_posts
+  - jekyll-loading-lazy
+  - jekyll-timeago
+  - jekyll-mentions
+  - jekyll-twitter-plugin
+  - jekyll-seo-tag
+  - jekyll-redirect-from
+  - jekyll-analytics
+  - emoji_for_jekyll
+  - jekyll-paspagon
+  - jekyll-admin
+  - jekyll_version_plugin

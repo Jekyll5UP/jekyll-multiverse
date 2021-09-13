@@ -1,0 +1,9 @@
+stylesheets: 
+ - ns: main
+   basePath: /assets/styles/
+   resources: 
+    - main.css
+
+postscripts: 
+ - ns: multiverse
+   basePath: /assets/scripts/modules/multiverse/

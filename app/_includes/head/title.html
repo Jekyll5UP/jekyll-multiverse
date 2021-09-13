@@ -1,0 +1,10 @@
+{% comment %}
+ id: title.head
+ type: element
+ version: 11.11.11
+ author: Jeff Desire
+{% endcomment %}
+
+{% assign @title = site.data.meta.title %}
+
+<title>{{ page.title }} {{ include.delimiter }} {{ @title }}</title>

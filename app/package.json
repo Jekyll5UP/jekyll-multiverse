@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "app:dev": "bundle install && bundle update && bundle exec jekyll serve --port 4040 --incremental --trace --verbose",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

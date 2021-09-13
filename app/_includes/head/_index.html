@@ -1,0 +1,18 @@
+{% comment %}
+ id: head
+ type: partial
+ version: 11.11.11
+ author: Jeff Desire
+{% endcomment %}
+
+{% assign title = "head/title.html" %}
+{% assign meta = "head/meta.html" %}
+{% assign stylesheets = "head/stylesheets.html" %}
+{% assign seo = "head/seo.html" %}
+
+<head>
+  {% include {{ title }} delimiter="@" %}
+  {% include {{ meta }} %}
+  {% include {{ stylesheets }} %}
+  {% include {{ seo }} %}
+</head>
